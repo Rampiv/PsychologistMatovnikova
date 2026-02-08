@@ -43,8 +43,16 @@
   }
 }
 
-@mixin item() {
-  border: 1px solid white;
-  border-radius: 15px;
-  background-color: $backgroundCard;
+@mixin standartBtn() {
+  @include standartTransition();
+  padding: 10px 15px;
+  background-color: $color1;
+  border-radius: 3px;
+  color: $white;
+  &:hover {
+    background-color: $color1lighter;
+  }
+  &:active {
+    background-color: $color1darkner;
+  }
 }
