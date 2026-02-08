@@ -27,18 +27,32 @@ img {
 }
 body {
   margin: 0;
+  font-family: Alice;
   font-weight: 400;
   font-style: normal;
   font-size: 1em;
   margin: 0;
   padding: 0;
   border: 0;
-  background: $main;
+  &:after {
+    content: "";
+    background-image: url("./assets/background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
 }
 
 /* Global class*/
 .container {
-  max-width: 720px;
+  max-width: 1920px;
   width: 100%;
   margin: 0 auto;
 }
@@ -46,7 +60,7 @@ body {
   position: relative;
   display: flex;
   width: 100%;
-  padding-top: 10px;
+  flex-direction: column;
   flex: 1 0 auto;
 }
 
@@ -56,4 +70,20 @@ body {
   min-height: 100vh;
   overflow: hidden;
   justify-content: flex-start;
+}
+
+@font-face {
+  font-family: "Alice";
+  src: url("./assets/font/Alice-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.section__container {
+  padding: 0 20px;
+}
+
+section{
+  margin-bottom: 5%;
 }

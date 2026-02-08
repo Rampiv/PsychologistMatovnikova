@@ -1,0 +1,64 @@
+@use "../../styles/style.scss" as *;
+
+.header {
+  width: 100%;
+  background: $white;
+  padding: 0 20px;
+  &__content {
+    @include flexible();
+    gap: 40px;
+    justify-content: flex-start;
+    padding: 20px 0;
+  }
+  &__naming {
+    @include flexible();
+    gap: 10px;
+  }
+  &__img {
+    width: 50px;
+    height: 50px;
+  }
+  &__img-link {
+    border: none;
+    outline: none;
+  }
+  &__h2-link {
+    display: block;
+    font-weight: 400;
+    border: none;
+    outline: none;
+  }
+  &__span {
+    color: $textLighter;
+  }
+}
+
+.nav {
+  margin-right: auto;
+  &__list {
+    @include listReset();
+    @include flexible();
+    gap: 20px;
+  }
+
+  &__link {
+    @include standartTransition();
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(0, 0, 0, 0);
+    &:hover {
+      border-bottom: 1px solid $blue;
+    }
+    &:focus {
+      border-bottom: 1px solid $color1;
+    }
+    &:active {
+      color: $color1;
+      border-bottom: 1px solid $color1;
+    }
+  }
+}
+
+.contacts {
+  @include standartBtn();
+}

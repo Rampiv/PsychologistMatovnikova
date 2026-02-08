@@ -1,0 +1,96 @@
+@use "../../styles/style.scss" as *;
+
+.hero {
+  .section__container {
+    display: flex;
+    gap: 40px;
+  }
+  &__psychologist {
+    max-width: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 8em;
+    font-weight: 400;
+    margin: 40px 0;
+  }
+  &__content {
+    display: flex;
+    gap: 40px;
+  }
+  &__img {
+    object-fit: cover;
+    max-height: 500px;
+    height: 100%;
+  }
+  &__content-inner {
+    @include flexible();
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.7em;
+    color: $textLighter;
+    width: 100%;
+  }
+  &__list {
+    @include listReset();
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px;
+  }
+  &__item-numbers {
+    color: $black;
+    font-size: 4em;
+  }
+}
+
+.work {
+  background-color: $blue;
+  color: $text;
+  &__list {
+    @include listReset();
+    @include flexible();
+    flex-direction: column;
+    width: 100%;
+  }
+  &__item {
+    padding: 40px 0;
+    width: 100%;
+    &:not(:last-child) {
+      border-bottom: 1px solid $color1lighter;
+    }
+  }
+
+  &__inner-list {
+    @include listReset();
+    display: flex;
+    gap: 20px;
+  }
+  &__inner-item {
+    display: flex;
+    align-items: center;
+  }
+  &__inner-img {
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  &__inner-name {
+    font-size: 2em;
+    max-width: 315px;
+    width: 100%;
+  }
+  &__inner-descr {
+    color: $textLighter;
+    font-size: 0.8em;
+    margin-right: auto;
+  }
+  &__link {
+    @include standartBtn();
+  }
+}
