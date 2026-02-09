@@ -4,26 +4,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export const useWorkAnimations = () => {
+export const useHeaderAnimations = () => {
   useEffect(() => {
     const workTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".work",
+        trigger: ".header",
         start: "top 80%",
       },
     })
     workTl.fromTo(
-      ".ant-collapse-item",
+      ".header",
       {
-        opacity: 0,
-        y: 500,
+        y: -100,
         ease: "power3.out",
       },
       {
-        opacity: 1,
         y: 0,
-        stagger: 0.4,
-        duration: 0.3,
+        duration: 1,
         ease: "power3.out",
       },
     )
