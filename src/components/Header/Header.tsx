@@ -1,8 +1,10 @@
 import "./Header.scss"
 import { Logo } from "@assets/Logo"
 import { Link } from "react-router"
+import { useHeaderAnimations } from "../../hooks/useHeaderAnimation"
 
 export const Header = () => {
+  useHeaderAnimations()
   const navigation = [
     {
       name: "Главная",
@@ -51,7 +53,9 @@ export const Header = () => {
               {navigation.map((item, index) => {
                 return (
                   <li key={index} className="nav__item">
-                    <Link to={item.link} className="nav__link">{item.name}</Link>
+                    <Link to={item.link} className="nav__link">
+                      {item.name}
+                    </Link>
                   </li>
                 )
               })}
